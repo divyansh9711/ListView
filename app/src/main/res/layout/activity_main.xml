@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/img"
+        android:src="@drawable/sta"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="230dp" />
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_marginTop="7dp"
+        android:background="#000000"
+        android:textSize="40sp"
+        android:textColor="#FFFFFF"
+        android:text="Hola amigo!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:background="#d44d4d"
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+
+        <ListView
+            android:id="@+id/myListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+    </RelativeLayout>
+</RelativeLayout>
