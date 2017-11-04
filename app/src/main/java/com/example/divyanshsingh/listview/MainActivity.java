@@ -1,5 +1,8 @@
 package com.example.divyanshsingh.listview;
 
+import android.content.ClipData;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +11,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,5 +69,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.navigation,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_setting:
+                Toast.makeText(this, "selected Settings", Toast.LENGTH_LONG);
+                Intent i = new Intent(android.provider.Settings.ACTION_SETTINGS);
+                startActivity(i);
+                return true;
+            case R.id.action_camera:
+                Toast.makeText(this,"selected camera",Toast.LENGTH_LONG);
+                i = new Intent("android.media.action.IMAGE_CAPTURE");
+                startActivity(i);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
